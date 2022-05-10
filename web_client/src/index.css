@@ -6,9 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34 !important;
+  background-image: url(/public/img/background.png);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.col-size {
+  width: 100%;
+  padding: 80px 0px 80px 0px;
+  border: 2px solid #01d976;
+  border-radius: 10%;
 }

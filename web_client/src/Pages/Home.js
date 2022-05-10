@@ -1,4 +1,4 @@
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Label, Input, Container, Col } from 'react-bootstrap';
 import '../App.css';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -12,26 +12,43 @@ function Home() {
     divQuiz.style.display = 'block';
   }
   return (
-    <div className="App col-md-12"><br/>
-        <h1 className="text-center">The Game of Cybersecurity</h1>
-        <div id="username" className='text-center' style={{marginTop: '10%'}}><br/>
-            <h2>Username</h2><br/>
-            <div className='col-md-12 d-flex'>
-                <Form.Control className='offset-md-5' style={{width: '17%', marginRight: '1%'}} placeholder='Enter Username'/>
-                <Button style={{borderRadius: '50%'}} onClick={displayButtonQuiz}><FaArrowRight/></Button>
+    <Container fluid="md">
+      <Col md="auto">
+      <div className="App col-md-12" style={{backgroundColor: 'transparent'}}><br/>
+      <div className="justify-content-center d-flex">
+      <img  src={require("../Assets/logo.png")} style={{width:'20%'}}/>
+      </div>
+      <Col xs={12} md={8}>
+      <div id="username" className='text-center' style={{marginTop: '5%'}}><br/>
+            <div className="offset-md-3 col-size">
+            <h2 style={{fontWeight: 'bold'}}>Username</h2><br/>
+            <div className='col-md-6 d-flex'>
+                <Form.Control className='col-md-1 offset-md-6' placeholder='Enter Username'/>
+                <Button style={{marginLeft: '2%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={displayButtonQuiz}><FaArrowRight/></Button>
             </div><br/>
-            <span>----- or -----</span><br/><br/>
-            <Button variant="light" className='col-md-2' onClick={displayButtonQuiz}>Anonymously</Button><br/><br/>
+            <span style={{color: '#01d976', fontWeight: 'bold'}}>---------- or ----------</span><br/><br/>
+            <Button style={{backgroundColor: '#01d976', borderColor: '#01d976'}} className='rounded-pill col-md-4' onClick={displayButtonQuiz}>Anonymously</Button><br/><br/>
+            </div>
+
         </div>
-        <div id="chooseQuiz" className='' style={{display: 'none', marginTop: '10%'}}>
+      </Col>
+      <Col xs={12} md={8}>
+
+        <div id="chooseQuiz" className='col-size offset-md-3' style={{display: 'none', marginTop: '10%'}}>
           <h2 className='text-center'>Choose the type of quiz:</h2><br/>
           <div className='d-flex'>
-            <Button className='col-md-2 offset-md-4' style={{fontSize:'25px', marginRight:'2%'}} variant="success">Quiz for Minor</Button>
-            <Button className='col-md-2'style={{fontSize:'25px'}} variant="danger">Quiz for Majeur</Button>
+            <Button className='col-md-4 offset-md-2 rounded-pill' style={{fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Minor</Button>
+            <Button className='col-md-4 rounded-pill'style={{fontSize:'17px'}} variant="danger">Quiz for Majeur</Button>
           </div>
 
         </div>
+        </Col>
+
     </div>
+      </Col>
+
+    </Container>
+
   );
 }
 
