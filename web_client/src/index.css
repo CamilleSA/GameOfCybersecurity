@@ -16,7 +16,38 @@ code {
 
 .col-size {
   width: 100%;
-  padding: 80px 0px 80px 0px;
+  padding: 30px 20px 80px 0px;
   border: 2px solid #01d976;
   border-radius: 10%;
+}
+
+.card {
+  position: relative;
+  background-color: black !important;
+  height: 170px;
+  width: 350px;
+  max-width: 100vh;
+  padding: 30px;
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
+}
+
+.card > span {
+  position: absolute;
+  font-size: 25px;
+  color: rgb(192, 46, 192);
+  background-color: black !important;
+  border-radius: 99px;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.swipe {
+  position: absolute;
+  z-index: -1;
 }
