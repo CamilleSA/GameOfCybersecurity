@@ -1,0 +1,26 @@
+[
+    {
+        "title": "",
+        "image": "phishing1.png",
+        "answer": [
+            "Safe",
+            "Not safe"
+        ],
+        "good_answer": 1,
+        "difficulty": 1,
+        "details": "This email is sent by a strange address, a government institution will never have a gmail, hotmail or outlook address."
+    },
+    {
+        "title": "By inserting an abandonned USB drive, I risk",
+        "image": "",
+        "answer": [
+            "Nothing",
+            "Having my passwords stolen instantly",
+            "To be fined",
+            "Having my pc components disfunctionning"
+        ],
+        "good_answer": 1,
+        "difficulty": 0,
+        "details": "Inserting an unknown flash drive is always a bit risky because some of them could be USB killer that will overcharge your pc in electricity. If your OS (like Windows) is up to date, you would normaly not have your password stolen until you do not open anything found on the USB device."
+    }
+]
