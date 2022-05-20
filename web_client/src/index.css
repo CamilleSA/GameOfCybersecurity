@@ -28,11 +28,10 @@ code {
   width: 350px;
   max-width: 100vh;
   padding: 30px;
-
   background-size: cover;
   background-position: center;
   border-radius: 30px;
-  box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
+  box-shadow: 1px 1px 3px 5px rgba(228, 207, 207, 0.3);
 }
 
 .card > span {
@@ -50,4 +49,19 @@ code {
 .swipe {
   position: absolute;
   z-index: -1;
+}
+
+.form-control:focus {
+  outline: none !important;
+  border:1px solid #01d976 !important;
+  box-shadow: 0 0 10px #01d976 !important;
+  color: #01d976;
+}
+
+.button-user:hover {
+  box-shadow: 0 0 10px #01d976 !important;
+}
+
+.button-major:hover {
+  box-shadow: 0 0 10px red !important;
 }

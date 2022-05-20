@@ -27,12 +27,12 @@ function ChooseQuiz() {
       </div>
       <Col xs={12} md={8}>
         <div id="chooseQuiz" className='col-size offset-md-3' style={{marginTop: '10%'}}>
-        <Button style={{marginLeft: '2%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={backUsername}><FaArrowLeft/></Button>
+        <Button className='button-user' style={{marginLeft: '2%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={backUsername}><FaArrowLeft/></Button>
         <h2 className='text-center'>Welcome {username} !</h2>
           <h2 className='text-center'>Choose the type of quiz:</h2><br/>
           <div className='d-flex'>
-            <Button onClick={quizMinor} className='col-md-4 offset-md-2 rounded-pill' style={{fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Minor</Button>
-            <Button onclick={quizMajor} className='col-md-4 rounded-pill'style={{fontSize:'17px'}} variant="danger">Quiz for Major</Button>
+            <Button onClick={quizMinor} className='col-md-4 offset-md-2 rounded-pill button-user' style={{fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Child</Button>
+            <Button onclick={quizMajor} className='col-md-4 rounded-pill button-major'style={{fontSize:'17px'}} variant="danger">Quiz for Adult</Button>
           </div>
 
         </div>
