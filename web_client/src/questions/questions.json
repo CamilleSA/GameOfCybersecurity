@@ -186,12 +186,12 @@
             "title": "Which of the following IS a smart way to test a suspicious link?",
             "image": "./img/phishing2.jpeg",
             "answer": [
-                "0",
+                "Use a free online tool to expand a shortened link and view the actual destination URL",
                 "Use a link scanner tool",
                 "Both answers: 1 and 2",
                 "Click on it"
             ],
-            "left": "0",
+            "left": "Use a free online tool to expand a shortened link and view the actual destination URL",
             "right": "Use a link scanner tool",
             "up": "Both answers: 1 and 2",
             "down": "Click on it",
