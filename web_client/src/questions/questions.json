@@ -72,7 +72,11 @@
                 "To be fined",
                 "Having my pc components disfunctionning"
             ],
-            "good_answer": 1,
+            "left": "Nothing",
+            "right": "Having my passwords stolen instantly",
+            "up": "To be fined",
+            "down": "Having my pc components disfunctionning",
+            "good_answer": "right",
             "difficulty": 0,
             "details": "Inserting an unknown flash drive is always a bit risky because some of them could be USB killer that will overcharge your pc in electricity. If your OS (like Windows) is up to date, you would normaly not have your password stolen until you do not open anything found on the USB device."
         },
@@ -85,7 +89,11 @@
                 "Short passwords",
                 "Informative systems"
             ],
-            "good_answer": 1,
+            "left": "Weak encryption",
+            "right": "Humans",
+            "up": "Short passwords",
+            "down": "Informative systems",
+            "good_answer": "right",
             "difficulty": 0,
             "details": ""
         },
@@ -98,7 +106,11 @@
                 "Repeat it twice",
                 "Enable two-factor authentication"
             ],
-            "good_answer": 3,
+            "left": "Add an uppercase numeral and a special character, such as $",
+            "right": "Don’t reuse it anywhere else or share it with anyone",
+            "up": "Repeat it twice",
+            "down": "Enable two-factor authentication",
+            "good_answer": "down",
             "difficulty": 0,
             "details": ""
         },
@@ -111,7 +123,11 @@
                 "Travel less with your smartphone",
                 "Factory reset your phone"
             ],
-            "good_answer": 0,
+            "left": "Post less on social media",
+            "right": "Take fewer photos with your smartphone",
+            "up": "Travel less with your smartphone",
+            "down": "Factory reset your phone",
+            "good_answer": "left",
             "difficulty": 0,
             "details": ""
         },
@@ -124,7 +140,11 @@
                 "Always if and only it is a strong one",
                 "Never"
             ],
-            "good_answer": 3,
+            "left": "When you are logging into social media accounts",
+            "right": "When it is too hard to remember a long password",
+            "up": "Always if and only it is a strong one",
+            "down": "Never",
+            "good_answer": "down",
             "difficulty": 0,
             "details": "You should never use a password many times"
         },
@@ -137,7 +157,11 @@
                 "Public taxi service",
                 "Blablacar"
             ],
-            "good_answer": 2,
+            "left": "Uber",
+            "right": "Bolt",
+            "up": "Public taxi service",
+            "down": "Blablacar",
+            "good_answer": "up",
             "difficulty": 0,
             "details": ""
         },
@@ -150,7 +174,11 @@
                 "Unsubscribing from all spam emails",
                 "Never open your emailbox"
             ],
-            "good_answer": 0,
+            "left": "Not sharing personal information on social media",
+            "right": "Covering your computer’s front-facing camera",
+            "up": "Unsubscribing from all spam emails",
+            "down": "Never open your emailbox",
+            "good_answer": "left",
             "difficulty": 0,
             "details": ""
         },
@@ -160,10 +188,14 @@
             "answer": [
                 "0",
                 "Use a link scanner tool",
-                "Both answers: Left and Right",
+                "Both answers: 1 and 2",
                 "Click on it"
             ],
-            "good_answer": 2,
+            "left": "0",
+            "right": "Use a link scanner tool",
+            "up": "Both answers: 1 and 2",
+            "down": "Click on it",
+            "good_answer": "up",
             "difficulty": 0,
             "details": "There are safe ways to test a link without actually clicking on it. One way is to know the red flags of a malicious link, so that you are able to spot obvious attempts. But you can also hover over it, use a link expanding tool, or a link scanner"
         },
@@ -176,7 +208,11 @@
                 "https://www.pay.pal.com/",
                 "https://www.paypal.com/us/home"
             ],
-            "good_answer": 3,
+            "left": "https://www.payapl.com/us/webapps/mpp/requesting-payments",
+            "right": "http://www.paypay.com.home/",
+            "up": "https://www.pay.pal.com/",
+            "down": "https://www.paypal.com/us/home",
+            "good_answer": "down",
             "difficulty": 0,
             "details": "Some notable differences in the incorrect URL's are: PayPal will always use “https“ because they are collecting personal information and extra security is required; anything before the forward slash is where you'll be taken, so any extra characters before the / are suspect; slight misspellings or extra characters (such as “payapl“ and “pay.pal“) are also red flags that you are being directed to a malicious site. They can be difficult to spot, so be sure to carefully check URL's."
         },
@@ -189,7 +225,11 @@
                 "No answer",
                 "No answer"
             ],
-            "good_answer": 1,
+            "left": "True",
+            "right": "False",
+            "up": "No answer",
+            "down": "No answer",
+            "good_answer": "right",
             "difficulty": 0,
             "details": "Two-factor authentication is an easy and very effective way to secure your accounts against unauthorized access. With 2FA in place, you can prevent a hacker from accessing your account even if they have cracked or stolen your password. It works by requiring a second piece of information be input - usually a pin or a code - when a login attempt is made from an unrecognized device."
         },
@@ -202,7 +242,11 @@
                 "No answer",
                 "No answer"
             ],
-            "good_answer": 1,
+            "left": "True",
+            "right": "False",
+            "up": "No answer",
+            "down": "No answer",
+            "good_answer": "right",
             "difficulty": 0,
             "details": "Anti-virus software alone is no longer enough. Network security today requires a multi-layered approach that includes firewalls, patch management, end-point protection, admin controls, end-user education and data backups management."
         }

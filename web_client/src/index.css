@@ -8,6 +8,7 @@ body {
   background-color: #282c34 !important;
   background-image: url(/public/img/background.png);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 code {
@@ -156,6 +157,22 @@ h2 {
   font-weight: bolder;
   width: 160px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
+}
+
+.button-fu {
+  background-color: fuchsia !important;
+}
+
+.button-go {
+  background-color: gold !important;
+}
+
+.button-aqua {
+  background-color: aqua !important;
+}
+
+.button-lightsalmon {
+  background-color: lightsalmon !important;
 }
 
 .buttons button:hover {

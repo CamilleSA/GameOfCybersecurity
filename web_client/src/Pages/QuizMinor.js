@@ -64,6 +64,13 @@ function QuizMinor () {
   const swiped = (direction, nameToDelete, index) => {
     setLastDirection(direction)
     updateCurrentIndex(index - 1)
+
+    if (direction === questionChild.Questions_Child[index].good_answer) {
+      console.log("Win");
+    } else {
+      console.log("loose");
+    }
+
   }
 
   const outOfFrame = (name, idx) => {
@@ -79,7 +86,11 @@ function QuizMinor () {
     if (canSwipe && currentIndex < questionChild.Questions_Child.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
-    console.log(dir);
+    //console.log(dir);
+    //console.log(currentIndexRef.current);
+   /* if (dir === questionChild.Questions_Child[currentIndexRef.current].good_answer) {
+      console.log("Win");
+    }*/
   }
 
   // increase current index and show card
@@ -136,17 +147,17 @@ function QuizMinor () {
               className='card'
             >
 
-              <div style={{backgroundColor: 'red', height: '19%', marginTop: '-18%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>3 : {character.answer[2]}</p>
+              <div style={{border: '2px solid fuchsia', backgroundColor: '#292a3e', height: '19%', marginTop: '-20%'}}>
+                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>3 : {character.up}</p>
               </div>
-              <div style={{backgroundColor: 'red', height: '110px', marginTop: '25%', marginRight: '110%', marginLeft: '-110%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>1 : {character.answer[0]}</p>
+              <div style={{border: '2px solid gold', backgroundColor: '#292a3e', height: '21%', marginTop: '28%', marginRight: '110%', marginLeft: '-110%'}}>
+                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>1 : {character.left}</p>
               </div>
-              <div style={{backgroundColor: 'red', height: '110px', marginTop: '-14%', marginRight: '-110%', marginLeft: '110%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>1 : {character.answer[1]}</p>
+              <div style={{border: '2px solid aqua', backgroundColor: '#292a3e', height: '21%', marginTop: '-11%', marginRight: '-110%', marginLeft: '110%'}}>
+                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>2 : {character.right}</p>
               </div>
-              <div style={{backgroundColor: 'red', height: '19%', marginTop: '35%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>4 : {character.answer[3]}</p>
+              <div style={{border: '2px solid lightsalmon', backgroundColor: '#292a3e', height: '19%', marginTop: '36%'}}>
+                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>4 : {character.down}</p>
               </div>
               <h3>{character.title}</h3>
 
@@ -155,14 +166,14 @@ function QuizMinor () {
         ))}
       </div><br/>
       <div className='buttons offset-md-3' style={{marginTop: '30%'}}>
-      <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-      <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('up')}>Swipe Up!</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
+      <button className='button-go' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Answer 1</button>
+      <button className='button-aqua' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Answer 2</button>
+      <button className='button-fu' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('up')}>Answer 3</button>
+      <button className='button-lightsalmon' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('down')}>Answer 4</button>
+        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Back</button>
       </div>
       {lastDirection ? (
         <h2 key={lastDirection} className='infoText'>
-          You swiped {lastDirection}
         </h2>
       ) : (
         <h2 className='infoText'>
