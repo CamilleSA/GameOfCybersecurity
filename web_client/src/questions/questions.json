@@ -1,9 +1,8 @@
 {
     "Questions_Adult": [
-
         {
             "title": "Is this email safe?",
-            "image": "images/phishing1.png",
+            "image": "./img/phishing1.png",
             "answer": [
                 "Safe",
                 "Not safe"
@@ -14,7 +13,7 @@
         },
         {
             "title": "What is the simplest way to stop brute-force cyberattacks dead in their tracks?",
-            "image": "images/password1.png",
+            "image": "./img/password1.png",
             "answer": [
                 "Shred all paperwork containing sensitive information",
                 "Add a deadbolt lock to all entryways",
@@ -26,7 +25,7 @@
         },
         {
             "title": "What is most valuable to companies looking to sell you something?",
-            "image": "images/privacy3.jpeg",
+            "image": "./img/privacy3.jpeg",
             "answer": [
                 "Your phone number",
                 "Your email address"
@@ -37,7 +36,7 @@
         },
         {
             "title": "What is the best way to keep employees from falling for phishing scams?",
-            "image": "images/phishing2.jpeg",
+            "image": "./img/phishing2.jpeg",
             "answer": [
                 "Email filters that block suspicious attachments",
                 "Cybersecurity awareness training",
@@ -50,7 +49,7 @@
         },
         {
             "title": "Which of the following cryptocurrency statements is false?",
-            "image": "images/crypto1.png",
+            "image": "./img/crypto1.png",
             "answer": [
                 "Blockchain is the digital ledger that records all cryptocurrency transactions",
                 "Each new Bitcoin mined requires slightly more energy than the previous one",
@@ -66,7 +65,7 @@
 
         {
             "title": "By inserting an abandonned USB drive, I risk",
-            "image": "images/usb1.jpeg",
+            "image": "./img/usb1.jpeg",
             "answer": [
                 "Nothing",
                 "Having my passwords stolen instantly",
@@ -79,7 +78,7 @@
         },
         {
             "title": "What is the weakest link in cybersecurity?",
-            "image": "images/cybersecurity1.jpeg",
+            "image": "./img/cybersecurity1.jpeg",
             "answer": [
                 "Weak encryption",
                 "Humans",
@@ -92,7 +91,7 @@
         },
         {
             "title": "What’s the best way to secure a weak password like “monkey123”?",
-            "image": "images/password1.png",
+            "image": "./img/password1.png",
             "answer": [
                 "Add an uppercase numeral and a special character, such as $",
                 "Don’t reuse it anywhere else or share it with anyone",
@@ -105,7 +104,7 @@
         },
         {
             "title": "The best way to minimize your digital footprint is to",
-            "image": "images/privacy1.jpeg",
+            "image": "./img/privacy1.jpeg",
             "answer": [
                 "Post less on social media",
                 "Take fewer photos with your smartphone",
@@ -118,7 +117,7 @@
         },
         {
             "title": "When is it ok to reuse a password?",
-            "image": "images/password1.png",
+            "image": "./img/password1.png",
             "answer": [
                 "When you are logging into social media accounts",
                 "When it is too hard to remember a long password",
@@ -131,7 +130,7 @@
         },
         {
             "title": "Which ride-sharing service collects the least amount of your data?",
-            "image": "images/privacy2.png",
+            "image": "./img/privacy2.png",
             "answer": [
                 "Uber",
                 "Bolt",
@@ -144,7 +143,7 @@
         },
         {
             "title": "Which one of these things is most effective for maintaining your digital privacy?",
-            "image": "images/privacy1.jpeg",
+            "image": "./img/privacy1.jpeg",
             "answer": [
                 "Not sharing personal information on social media",
                 "Covering your computer’s front-facing camera",
@@ -157,9 +156,9 @@
         },
         {
             "title": "Which of the following IS a smart way to test a suspicious link?",
-            "image": "images/phishing2.jpeg",
+            "image": "./img/phishing2.jpeg",
             "answer": [
-                "Use a free online tool to expand a shortened link and view the actual destination URL",
+                "0",
                 "Use a link scanner tool",
                 "Both answers: Left and Right",
                 "Click on it"
@@ -170,7 +169,7 @@
         },
         {
             "title": "Which website URL is legitimate?",
-            "image": "images/site1.png",
+            "image": "./img/site1.png",
             "answer": [
                 "https://www.payapl.com/us/webapps/mpp/requesting-payments",
                 "http://www.paypay.com.home/",
@@ -183,10 +182,12 @@
         },
         {
             "title": "Using two-factor authentication is not an effective tool for securing your accounts",
-            "image": "images/2fa1.jpeg",
+            "image": "./img/2fa1.jpeg",
             "answer": [
                 "True",
-                "False"
+                "False",
+                "No answer",
+                "No answer"
             ],
             "good_answer": 1,
             "difficulty": 0,
@@ -194,10 +195,12 @@
         },
         {
             "title": "I have anti-virus protection, so when it comes to network security, I'm all set",
-            "image": "images/antivirus1.jpeg",
+            "image": "./img/antivirus1.jpeg",
             "answer": [
                 "True",
-                "False"
+                "False",
+                "No answer",
+                "No answer"
             ],
             "good_answer": 1,
             "difficulty": 0,

@@ -8,7 +8,7 @@ import QuizMinor from './Pages/QuizMinor';
 function App() {
   return (
     <Router>
-      <div style={{backgroundImage: "url(/img/background.png)"}}>
+      <div>
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
           <Route path="/home" element={<Home/>}></Route>
