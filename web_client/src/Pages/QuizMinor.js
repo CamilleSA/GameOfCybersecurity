@@ -84,8 +84,19 @@ function QuizMinor () {
   };
 
   const outOfFrame = (name, idx) => {
+    const currentCardPackage = document.getElementById('card'+idx);
+    let nextCardPackage;
+    if (idx > 0) {
+      nextCardPackage = document.getElementById('card'+(idx - 1));
+    }
+
+    currentCardPackage.style.display = 'none';
+    if (nextCardPackage) {
+      nextCardPackage.style.display = 'flex';
+    }
     console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
+    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
+
   }
 
   const swipe = async (dir) => {
@@ -151,41 +162,45 @@ function QuizMinor () {
         </div>
         </div>
 
-      <div className='cardContainer offset-md-4'>
+      <div className='cardContainer'>
         {questionChild.Questions_Child.map((character, index) => (
-          <TinderCard
-            ref={childRefs[index]}
-            className='swipe'
-            key={character.title}
-            onSwipe={(dir) => swiped(dir, character.title, index)}
-            onCardLeftScreen={() => outOfFrame(character.title, index)}
-          >
-            <div
-              style={{ backgroundImage: 'url(' + character.image + ')' }}
-              className='card'
-            >
-
-              <div style={{border: '2px solid fuchsia', backgroundColor: '#292a3e', height: '19%', marginTop: '-20%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>3 : {character.up}</p>
-              </div>
-              <div style={{border: '2px solid gold', backgroundColor: '#292a3e', height: '23%', marginTop: '28%', marginRight: '110%', marginLeft: '-110%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>1 : {character.left}</p>
-              </div>
-              <div style={{border: '2px solid aqua', backgroundColor: '#292a3e', height: '21%', marginTop: '-11%', marginRight: '-110%', marginLeft: '110%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>2 : {character.right}</p>
-              </div>
-              <div style={{border: '2px solid lightsalmon', backgroundColor: '#292a3e', height: '19%', marginTop: '36%'}}>
-                <p style={{color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px'}}>4 : {character.down}</p>
-              </div>
-              <h3>{character.title}</h3>
-
+          <div id={'card'+index} style={{display: (index === questionChild.Questions_Child.length - 1) ? '' : 'none'}}>
+            <div style={{margin: '20px 0'}}>
+              <p style={{border: '2px solid fuchsia', backgroundColor: '#292a3e', color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px', width: '300px', margin: '0 auto'}}>3 : {character.up}</p>
             </div>
-          </TinderCard>
+            <div className='cardMiddleRow'>
+              <div style={{margin: '0 20px'}}>
+                <p style={{border: '2px solid gold', backgroundColor: '#292a3e', color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px', width: '300px', margin: '0 auto'}}>1 : {character.left}</p>
+              </div>
+              <TinderCard
+                ref={childRefs[index]}
+                className='swipe'
+                key={character.title}
+                onSwipe={(dir) => swiped(dir, character.title, index)}
+                onCardLeftScreen={() => outOfFrame(character.title, index)}
+              >
+                <div>
+                  <h4 style={{marginBottom: '10px'}}>{character.title}</h4>
+                </div>
+                <div
+                  style={{ backgroundImage: 'url(' + character.image + ')' }}
+                  className='card'
+                >
+                </div>
+              </TinderCard>
+              <div style={{margin: '0 20px'}}>
+                <p style={{border: '2px solid aqua', backgroundColor: '#292a3e', color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px', width: '300px', margin: '0 auto'}}>2 : {character.right}</p>
+              </div>
+            </div>
+            <div style={{margin: '20px 0'}}>
+              <p style={{border: '2px solid lightsalmon', backgroundColor: '#292a3e', color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px', width: '300px', margin: '0 auto'}}>4 : {character.down}</p>
+            </div>
+          </div>
         ))}
       </div><br/>
 
-      <div className='buttons offset-md-3' style={{marginTop: '27%'}}>
-      <button className='button-go' style={{ backgroundColor: !canSwipe && '#c3c4d3', marginLeft: '2%' }} onClick={() => swipe('left')}>Answer 1</button>
+      <div className='buttons offset-md2' style={{marginTop: '20px'}}>
+      <button className='button-go' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Answer 1</button>
       <button className='button-aqua' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Answer 2</button>
       <button className='button-fu' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('up')}>Answer 3</button>
       <button className='button-lightsalmon' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('down')}>Answer 4</button>
