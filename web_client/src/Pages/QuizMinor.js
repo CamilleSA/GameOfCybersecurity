@@ -1,18 +1,19 @@
 import React, { useState, useMemo, useRef } from 'react'
 import TinderCard from 'react-tinder-card'
 import questionChild from "../questions/questions.json"
-import { CountdownCircleTimer, useCountdown } from 'react-countdown-circle-timer'
-import { Button, Container, Col } from 'react-bootstrap'; 
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import { Button } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 
 function QuizMinor () {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Child.length - 1)
-  const [lastDirection, setLastDirection] = useState()
+  //const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
   const username = sessionStorage.getItem('username');
   const [start, setStart] = useState(false);
   const [winTime, setWinTime] = useState(30);
   const [score, setScore] = useState(0);  
+  const canSwipe = currentIndex >= 0
 
 
   const childRefs = useMemo(
@@ -28,11 +29,6 @@ function QuizMinor () {
     setStart(true);
   };
 
-  const addTime = () => {
-    setWinTime(winTime + 5);
-
-  };
-
   const showQuizz = () => {
     const readyDiv = document.getElementById('ready');
     const quizDiv = document.getElementById('quiz');
@@ -42,29 +38,28 @@ function QuizMinor () {
     handleStart();
   };
 
-  const remainingTime = ({ remainingTime }) => {
+  /*const remainingTime = ({ remainingTime }) => {
     return (
       <div>
         <h1>{remainingTime}</h1>
       </div>
     );
-  };
+  };*/
 
   const updateCurrentIndex = (val) => {
     setCurrentIndex(val)
     currentIndexRef.current = val
   }
 
-  const canGoBack = currentIndex < questionChild.Questions_Child.length - 1
+  //const canGoBack = currentIndex < questionChild.Questions_Child.length - 1
 
-  const canSwipe = currentIndex >= 0
 
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
     const checkWin = document.getElementById('winIcon');
     const checkLoose = document.getElementById('looseIcon');
 
-    setLastDirection(direction)
+    //setLastDirection(direction)
     updateCurrentIndex(index - 1)
 
     if (direction === questionChild.Questions_Child[index].good_answer) {
@@ -96,12 +91,12 @@ function QuizMinor () {
   }
 
   // increase current index and show card
-  const goBack = async () => {
+  /*const goBack = async () => {
     if (!canGoBack) return
     const newIndex = currentIndex + 1
     updateCurrentIndex(newIndex)
     await childRefs[newIndex].current.restoreCard()
-  }
+  }*/
 
   return (
 
