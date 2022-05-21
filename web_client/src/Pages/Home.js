@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Form, Container, Col } from 'react-bootstrap';
+import { Button, Form, Container, Col, Spinner } from 'react-bootstrap';
 import '../App.css';
 import { FaArrowRight } from 'react-icons/fa';
 

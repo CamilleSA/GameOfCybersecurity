@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef } from 'react'
 import TinderCard from 'react-tinder-card'
 import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-import { Button, Table } from 'react-bootstrap'; 
+import { Button, Table, Spinner } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 
 function QuizMinor () {
@@ -13,7 +13,9 @@ function QuizMinor () {
   const [start, setStart] = useState(false);
   const [winTime, setWinTime] = useState(30);
   const [score, setScore] = useState(0);  
+  const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
+  const result = [];
 
 
   const childRefs = useMemo(
@@ -28,6 +30,7 @@ function QuizMinor () {
   const handleStart = () => {
     setStart(true);
   };
+  
 
   const showQuizz = () => {
     const readyDiv = document.getElementById('ready');
@@ -55,11 +58,12 @@ function QuizMinor () {
 
 
   // set last direction and decrease current index
-  const swiped = (direction, nameToDelete, index) => {
+  const swiped = async (direction, nameToDelete, index) => {
     const checkWin = document.getElementById('winIcon');
     const checkLoose = document.getElementById('looseIcon');
     const quizDiv = document.getElementById('quiz');
     const detailsDiv = document.getElementById('details');
+    const spinn = document.getElementById("spin");
 
     //setLastDirection(direction)
     updateCurrentIndex(index - 1)
@@ -69,15 +73,20 @@ function QuizMinor () {
       checkWin.style.display = 'block';
       checkLoose.style.display = 'none';
       setWinTime(winTime + 5);
+      result.push("✅");
     } else {
-      console.log("loose");
       checkWin.style.display = 'none';
       checkLoose.style.display = 'block';
+      result.push("❌");
     }
-
+    
     if (index === 0) {
-      console.log("Finish");
+      const reversed = result.reverse();
+      setSaveAnswer(reversed);
       quizDiv.style.display = 'none';
+      spinn.style.display = 'block';
+      await wait(3000);
+      spinn.style.display = 'none';
       detailsDiv.style.display = 'block';
     }
 
@@ -94,7 +103,7 @@ function QuizMinor () {
     if (nextCardPackage) {
       nextCardPackage.style.display = 'flex';
     }
-    console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
+   // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
 
   }
@@ -104,6 +113,13 @@ function QuizMinor () {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
   };
+
+  const wait = (timeout) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, timeout);
+    })
+}
+
 
   // increase current index and show card
   /*const goBack = async () => {
@@ -164,7 +180,7 @@ function QuizMinor () {
 
       <div className='cardContainer'>
         {questionChild.Questions_Child.map((character, index) => (
-          <div id={'card'+index} style={{display: (index === questionChild.Questions_Child.length - 1) ? '' : 'none'}}>
+          <div key={character.title} id={'card'+index} style={{display: (index === questionChild.Questions_Child.length - 1) ? '' : 'none'}}>
             <div style={{margin: '20px 0'}}>
               <p style={{border: '2px solid fuchsia', backgroundColor: '#292a3e', color: 'white', fontWeight: 'bold', fontSize: '16px', padding: '15px 15px 15px 15px', width: '300px', margin: '0 auto'}}>3 : {character.up}</p>
             </div>
@@ -207,8 +223,38 @@ function QuizMinor () {
       </div>
 
       </div>
-
-
+      <div id="spin" style={{display: 'none', marginTop: '10%'}}>
+        <Spinner animation="border" variant="#01d976" size="500" style={{height: '150px', width: '150px', color: '#01d976'}}/><br/><br/>
+        <h5 style={{color:"white", fontWeight: 'bold'}}>Loading results ...</h5>
+      </div>
+      <div id="details" style={{marginTop: '2%', display: 'none'}}>
+      <Button style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
+        <div style={{backgroundColor: '#292a3e', padding: '5px 45px 15px 45px'}}>
+                <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
+                <thead style={{border: '2px solid #01d976'}}>
+                  <tr style={{border: '2px solid #01d976'}}>
+                    <th style={{border: '2px solid #01d976'}} width='20%'>Question</th>
+                    <th style={{border: '2px solid #01d976'}} width='10%'>Good Answer</th>
+                    <th style={{border: '2px solid #01d976'}} width='20%'>Details</th>
+                    <th style={{border: '2px solid #01d976'}} width='4%'>Your Answer</th>
+                  </tr>
+                </thead>
+                <tbody style={{border: '2px solid #01d976'}}>
+                { questionChild.Questions_Child
+                .slice()
+                .sort((a,b) => b.title - a.title)
+                .map((question, index) => (
+                  <tr  key={question.title} style={{border: '2px solid #01d976', color: 'white'}}>
+                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question.title}</td>
+                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question[question.good_answer]}</td>
+                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question.details}</td>
+                    <td style={{border: '2px solid #01d976', color: 'white'}}>{saveAnswer[index]}</td>
+                  </tr>
+                  ))}
+                </tbody>
+              </Table>
+      </div>
+      </div>
 
     </div>
   )
@@ -227,27 +273,5 @@ export default QuizMinor
       )}
 
 
-            <div id="details" style={{marginTop: '2%', backgroundColor: '#292a3e'}}>
-                <Table  striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
-                <thead style={{border: '2px solid #01d976'}}>
-                  <tr style={{border: '2px solid #01d976'}}>
-                    <th style={{border: '2px solid #01d976'}} width='20%'>Question</th>
-                    <th style={{border: '2px solid #01d976'}} width='10%'>Good Answer</th>
-                    <th style={{border: '2px solid #01d976'}} width='10%'>Your Answer</th>
-                    <th style={{border: '2px solid #01d976'}} width='20%'>Details</th>
-                  </tr>
-                </thead>
-                <tbody style={{border: '2px solid #01d976'}}>
-                { questionChild.Questions_Child.map((question, index) => (
-                  <tr style={{border: '2px solid #01d976', color: 'white'}}>
-                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question.title}</td>
-                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question[question.good_answer]}</td>
-                    <td style={{border: '2px solid #01d976', color: 'white'}}>ddd</td>
-                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question.details}</td>
-                  </tr>
-                  ))}
-                </tbody>
-              </Table>
 
-      </div>
 */

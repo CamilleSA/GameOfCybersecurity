@@ -202,3 +202,23 @@ h2 {
 .buttons button:hover {
   transform: scale(1.05);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #191a28;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #01d976;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #01d976;
+}
