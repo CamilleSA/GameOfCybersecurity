@@ -3,61 +3,51 @@
         {
             "title": "Is this email safe?",
             "image": "./img/phishing1.png",
-            "answer": [
-                "Safe",
-                "Not safe"
-            ],
-            "good_answer": 1,
-            "difficulty": 1,
+            "left": "Safe",
+            "right": "Not safe",
+            "up": "No answer",
+            "down": "No answer",
+            "good_answer": "right",
             "details": "This email is sent by a strange address, a government institution will never have a gmail, hotmail or outlook address."
         },
         {
             "title": "What is the simplest way to stop brute-force cyberattacks dead in their tracks?",
             "image": "./img/password1.png",
-            "answer": [
-                "Shred all paperwork containing sensitive information",
-                "Add a deadbolt lock to all entryways",
-                "Add a few unique characters to any password or PIN"
-            ],
-            "good_answer": 2,
-            "difficulty": 1,
+            "left": "Shred all paperwork containing sensitive information",
+            "right": "Add a deadbolt lock to all entryways",
+            "up": "Add a few unique characters to any password or PIN",
+            "down": "No answer",
+            "good_answer": "up",
             "details": ""
         },
         {
             "title": "What is most valuable to companies looking to sell you something?",
             "image": "./img/privacy3.jpeg",
-            "answer": [
-                "Your phone number",
-                "Your email address"
-            ],
-            "good_answer": 0,
-            "difficulty": 1,
+            "left": "Your phone number",
+            "right": "Your email address",
+            "up": "No answer",
+            "down": "No answer",
+            "good_answer": "left",
             "details": "Indeed, your phone number is the most likely not to change during years"
         },
         {
             "title": "What is the best way to keep employees from falling for phishing scams?",
             "image": "./img/phishing2.jpeg",
-            "answer": [
-                "Email filters that block suspicious attachments",
-                "Cybersecurity awareness training",
-                "Pop-up blockers",
-                "Never open your emailbox"
-            ],
-            "good_answer": 1,
-            "difficulty": 1,
+            "left": "Email filters that block suspicious attachments",
+            "right": "Cybersecurity awareness training",
+            "up": "Pop-up blockers",
+            "down": "Never open your emailbox",
+            "good_answer": "right",
             "details": ""
         },
         {
             "title": "Which of the following cryptocurrency statements is false?",
             "image": "./img/crypto1.png",
-            "answer": [
-                "Blockchain is the digital ledger that records all cryptocurrency transactions",
-                "Each new Bitcoin mined requires slightly more energy than the previous one",
-                "Cryptocurrency is 100 times more secure than traditional currency",
-                "Cryptocurrency assures you of wealth"
-            ],
-            "good_answer": 2,
-            "difficulty": 1,
+            "left": "Blockchain is the digital ledger that records all cryptocurrency transactions",
+            "right": "Each new Bitcoin mined requires slightly more energy than the previous one",
+            "up": "Cryptocurrency is 100 times more secure than traditional currency",
+            "down": "Cryptocurrency assures you of wealth",
+            "good_answer": "up",
             "details": ""
         }
     ],
