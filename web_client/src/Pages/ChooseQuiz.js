@@ -1,6 +1,6 @@
-import { Button, Container, Col } from 'react-bootstrap';
+import { Button, Container, Col, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import '../App.css';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaRegQuestionCircle } from 'react-icons/fa';
 
 function ChooseQuiz() {
 
@@ -8,7 +8,7 @@ function ChooseQuiz() {
 
   const backUsername = () => {
     window.location.href = '/home';
-  }
+  };
 
   const quizMajor = () => {
     window.location.href = '/quiz-major';
@@ -17,6 +17,18 @@ function ChooseQuiz() {
   const quizMinor = () => {
     window.location.href = '/quiz-minor';
   };
+
+  const renderTooltipBeginner = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Your use of the Internet is limited to reading emails, social networks and some research.
+    </Tooltip>
+  );
+
+  const renderTooltipAdvanced = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      You use the Internet at work, for your administrative procedures, you are subscribed to third party services.
+    </Tooltip>
+  );
 
   return (
     <Container fluid="md">
@@ -30,9 +42,13 @@ function ChooseQuiz() {
         <Button className='button-user' style={{marginLeft: '-80%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={backUsername}><FaArrowLeft/></Button>
         <h2 className='text-center'>Welcome {username} !</h2>
           <h2 className='text-center'>Choose the type of quiz:</h2><br/>
-          <div className='d-flex'>
-            <Button onClick={quizMinor} className='col-md-4 offset-md-2 rounded-pill button-user' style={{fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Child</Button>
-            <Button onClick={quizMajor} className='col-md-4 rounded-pill button-major'style={{fontSize:'17px'}} variant="danger">Quiz for Adult</Button>
+          <div className='d-flex col-md-10 offset-md-2'>
+          <OverlayTrigger placement="left" delay={{ show: 250, hide: 400 }} overlay={renderTooltipBeginner}>
+          <Button onClick={quizMinor} className='col-md-5 rounded-pill button-user' style={{fontWeight: 'bold', fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Beginner</Button>
+          </OverlayTrigger>
+          <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipAdvanced}>
+            <Button onClick={quizMajor} className='col-md-5 rounded-pill button-major'style={{marginRight:'1%', fontWeight: 'bold', fontSize:'17px'}} variant="danger">Quiz for Advanced</Button>
+            </OverlayTrigger>
           </div>
 
         </div>

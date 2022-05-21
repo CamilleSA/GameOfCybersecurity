@@ -79,7 +79,7 @@ function QuizMinor () {
       checkLoose.style.display = 'block';
       result.push("❌");
     }
-    
+
     if (index === 0) {
       const reversed = result.reverse();
       setSaveAnswer(reversed);
@@ -119,16 +119,6 @@ function QuizMinor () {
         setTimeout(resolve, timeout);
     })
 }
-
-
-  // increase current index and show card
-  /*const goBack = async () => {
-    if (!canGoBack) return
-    const newIndex = currentIndex + 1
-    updateCurrentIndex(newIndex)
-    await childRefs[newIndex].current.restoreCard()
-  }*/
-
   return (
 
     <div>
@@ -137,7 +127,7 @@ function QuizMinor () {
       </div>
       <div id='ready'>
         <div className='' style={{marginTop: '5%'}}>
-              <h1 className=''>Welcome {username} to the child quiz !</h1><br/>
+              <h1 className=''>Welcome {username} to the beginner quiz !</h1><br/>
               <h2 className='text-center'>Are you ready ?</h2><br/><br/>
               <Button onClick={showQuizz} style={{backgroundColor: '#01d976', borderColor: '#01d976'}} className='button-user rounded-pill col-md-2'>Start</Button><br/><br/>
         </div><br/>
