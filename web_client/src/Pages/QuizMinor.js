@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useRef } from 'react'
-// import TinderCard from '../react-tinder-card/index'
 import TinderCard from 'react-tinder-card'
 import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer, useCountdown } from 'react-countdown-circle-timer'
@@ -9,7 +8,6 @@ import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 function QuizMinor () {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Child.length - 1)
   const [lastDirection, setLastDirection] = useState()
-  // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex)
   const username = sessionStorage.getItem('username');
   const [start, setStart] = useState(false);
@@ -80,26 +78,21 @@ function QuizMinor () {
       checkLoose.style.display = 'block';
     }
 
+    if (index === 0) {
+      console.log("Finish");
+    }
+
   }
 
   const outOfFrame = (name, idx) => {
     console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
-    // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
-    // TODO: when quickly swipe and restore multiple times the same card,
-    // it happens multiple outOfFrame events are queued and the card disappear
-    // during latest swipes. Only the last outOfFrame event should be considered valid
+    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
   }
 
   const swipe = async (dir) => {
     if (canSwipe && currentIndex < questionChild.Questions_Child.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
-    //console.log(dir);
-    //console.log(currentIndexRef.current);
-   /* if (dir === questionChild.Questions_Child[currentIndexRef.current].good_answer) {
-      console.log("Win");
-    }*/
   }
 
   // increase current index and show card
@@ -193,11 +186,10 @@ function QuizMinor () {
       </div><br/>
 
       <div className='buttons offset-md-3' style={{marginTop: '27%'}}>
-      <button className='button-go' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Answer 1</button>
+      <button className='button-go' style={{ backgroundColor: !canSwipe && '#c3c4d3', marginLeft: '2%' }} onClick={() => swipe('left')}>Answer 1</button>
       <button className='button-aqua' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Answer 2</button>
       <button className='button-fu' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('up')}>Answer 3</button>
       <button className='button-lightsalmon' style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('down')}>Answer 4</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Back</button>
       </div>
 
       </div>
