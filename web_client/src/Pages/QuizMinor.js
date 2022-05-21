@@ -209,7 +209,25 @@ function QuizMinor () {
       </div>
 
 
-      <div id="details" style={{marginTop: '2%', backgroundColor: '#292a3e'}}>
+
+    </div>
+  )
+}
+
+export default QuizMinor
+/*
+      {lastDirection ? (
+        <h2 key={lastDirection} className='infoText'>
+
+        </h2>
+      ) : (
+        <h2 className='infoText'>
+          Swipe a card or press a button to get Card !
+        </h2>
+      )}
+
+
+            <div id="details" style={{marginTop: '2%', backgroundColor: '#292a3e'}}>
                 <Table  striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
                 <thead style={{border: '2px solid #01d976'}}>
                   <tr style={{border: '2px solid #01d976'}}>
@@ -232,19 +250,4 @@ function QuizMinor () {
               </Table>
 
       </div>
-    </div>
-  )
-}
-
-export default QuizMinor
-/*
-      {lastDirection ? (
-        <h2 key={lastDirection} className='infoText'>
-
-        </h2>
-      ) : (
-        <h2 className='infoText'>
-          Swipe a card or press a button to get Card !
-        </h2>
-      )}
 */
