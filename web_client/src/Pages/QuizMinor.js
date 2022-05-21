@@ -223,7 +223,7 @@ function QuizMinor () {
                 { questionChild.Questions_Child.map((question, index) => (
                   <tr style={{border: '2px solid #01d976', color: 'white'}}>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question.title}</td>
-                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question.good_answer_details}</td>
+                    <td style={{border: '2px solid #01d976', color: 'white'}}>{question[question.good_answer]}</td>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>ddd</td>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question.details}</td>
                   </tr>

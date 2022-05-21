@@ -8,8 +8,7 @@
             "up": "No answer",
             "down": "No answer",
             "good_answer": "right",
-            "details": "This email is sent by a strange address, a government institution will never have a gmail, hotmail or outlook address.",
-            "good_answer_details": "Not safe"
+            "details": "This email is sent by a strange address, a government institution will never have a gmail, hotmail or outlook address."
         },
         {
             "title": "What is the simplest way to stop brute-force cyberattacks dead in their tracks?",
@@ -19,8 +18,7 @@
             "up": "Add a few unique characters to any password or PIN",
             "down": "No answer",
             "good_answer": "up",
-            "details": "",
-            "good_answer_details": "Add a few unique characters to any password or PIN"
+            "details": ""
         },
         {
             "title": "What is most valuable to companies looking to sell you something?",
@@ -30,8 +28,7 @@
             "up": "No answer",
             "down": "No answer",
             "good_answer": "left",
-            "details": "Indeed, your phone number is the most likely not to change during years",
-            "good_answer_details": "Your phone number"
+            "details": "Indeed, your phone number is the most likely not to change during years"
         },
         {
             "title": "What is the best way to keep employees from falling for phishing scams?",
@@ -41,8 +38,7 @@
             "up": "Pop-up blockers",
             "down": "Never open your emailbox",
             "good_answer": "right",
-            "details": "",
-            "good_answer_details": "Cybersecurity awareness training"            
+            "details": ""        
         },
         {
             "title": "Which of the following cryptocurrency statements is false?",
@@ -52,8 +48,7 @@
             "up": "Cryptocurrency is 100 times more secure than traditional currency",
             "down": "Cryptocurrency assures you of wealth",
             "good_answer": "up",
-            "details": "",
-            "good_answer_details": "Cryptocurrency is 100 times more secure than traditional currency"
+            "details": ""
         }
     ],
     "Questions_Child": [
@@ -66,8 +61,7 @@
             "up": "To be fined",
             "down": "Having my pc components disfunctionning",
             "good_answer": "right",
-            "details": "Inserting an unknown flash drive is always a bit risky because some of them could be USB killer that will overcharge your pc in electricity. If your OS (like Windows) is up to date, you would normaly not have your password stolen until you do not open anything found on the USB device.",
-            "good_answer_details": "Having my passwords stolen instantly"
+            "details": "Inserting an unknown flash drive is always a bit risky because some of them could be USB killer that will overcharge your pc in electricity. If your OS (like Windows) is up to date, you would normaly not have your password stolen until you do not open anything found on the USB device."
         },
         {
             "title": "What is the weakest link in cybersecurity?",
@@ -77,8 +71,7 @@
             "up": "Short passwords",
             "down": "Informative systems",
             "good_answer": "right",
-            "details": "",
-            "good_answer_details": "Humans"
+            "details": ""
         },
         {
             "title": "What’s the best way to secure a weak password like “monkey123”?",
@@ -88,8 +81,7 @@
             "up": "Repeat it twice",
             "down": "Enable two-factor authentication",
             "good_answer": "down",
-            "details": "",
-            "good_answer_details": "Enable two-factor authentication"
+            "details": ""
         },
         {
             "title": "The best way to minimize your digital footprint is to",
@@ -99,8 +91,7 @@
             "up": "Travel less with your smartphone",
             "down": "Factory reset your phone",
             "good_answer": "left",
-            "details": "",
-            "good_answer_details": "Post less on social media"
+            "details": ""
         },
         {
             "title": "When is it ok to reuse a password?",
@@ -110,8 +101,7 @@
             "up": "Always if and only it is a strong one",
             "down": "Never",
             "good_answer": "down",
-            "details": "You should never use a password many times",
-            "good_answer_details": "Never"
+            "details": "You should never use a password many times"
         },
         {
             "title": "Which ride-sharing service collects the least amount of your data?",
@@ -121,8 +111,7 @@
             "up": "Public taxi service",
             "down": "Blablacar",
             "good_answer": "up",
-            "details": "",
-            "good_answer_details": "Public taxi service"
+            "details": ""
         },
         {
             "title": "Which one of these things is most effective for maintaining your digital privacy?",
@@ -132,8 +121,7 @@
             "up": "Unsubscribing from all spam emails",
             "down": "Never open your emailbox",
             "good_answer": "left",
-            "details": "",
-            "good_answer_details": "Not sharing personal information on social media"
+            "details": ""
         },
         {
             "title": "Which of the following IS a smart way to test a suspicious link?",
@@ -143,8 +131,7 @@
             "up": "Both answers: 1 and 2",
             "down": "Click on it",
             "good_answer": "up",
-            "details": "There are safe ways to test a link without actually clicking on it. One way is to know the red flags of a malicious link, so that you are able to spot obvious attempts. But you can also hover over it, use a link expanding tool, or a link scanner",
-            "good_answer_details": "Both answers: 1 and 2"
+            "details": "There are safe ways to test a link without actually clicking on it. One way is to know the red flags of a malicious link, so that you are able to spot obvious attempts. But you can also hover over it, use a link expanding tool, or a link scanner"
         },
         {
             "title": "Which website URL is legitimate?",
@@ -154,8 +141,7 @@
             "up": "https://www.pay.pal.com/",
             "down": "https://www.paypal.com/us/home",
             "good_answer": "down",
-            "details": "Some notable differences in the incorrect URL's are: PayPal will always use “https“ because they are collecting personal information and extra security is required; anything before the forward slash is where you'll be taken, so any extra characters before the / are suspect; slight misspellings or extra characters (such as “payapl“ and “pay.pal“) are also red flags that you are being directed to a malicious site. They can be difficult to spot, so be sure to carefully check URL's.",
-            "good_answer_details": "https://www.paypal.com/us/home"
+            "details": "Some notable differences in the incorrect URL's are: PayPal will always use “https“ because they are collecting personal information and extra security is required; anything before the forward slash is where you'll be taken, so any extra characters before the / are suspect; slight misspellings or extra characters (such as “payapl“ and “pay.pal“) are also red flags that you are being directed to a malicious site. They can be difficult to spot, so be sure to carefully check URL's."
         },
         {
             "title": "Using two-factor authentication is not an effective tool for securing your accounts",
@@ -165,8 +151,7 @@
             "up": "No answer",
             "down": "No answer",
             "good_answer": "right",
-            "details": "Two-factor authentication is an easy and very effective way to secure your accounts against unauthorized access. With 2FA in place, you can prevent a hacker from accessing your account even if they have cracked or stolen your password. It works by requiring a second piece of information be input - usually a pin or a code - when a login attempt is made from an unrecognized device.",
-            "good_answer_details": "False"
+            "details": "Two-factor authentication is an easy and very effective way to secure your accounts against unauthorized access. With 2FA in place, you can prevent a hacker from accessing your account even if they have cracked or stolen your password. It works by requiring a second piece of information be input - usually a pin or a code - when a login attempt is made from an unrecognized device."
         },
         {
             "title": "I have anti-virus protection, so when it comes to network security, I'm all set",
@@ -176,8 +161,7 @@
             "up": "No answer",
             "down": "No answer",
             "good_answer": "right",
-            "details": "Anti-virus software alone is no longer enough. Network security today requires a multi-layered approach that includes firewalls, patch management, end-point protection, admin controls, end-user education and data backups management.",
-            "good_answer_details": "False"
+            "details": "Anti-virus software alone is no longer enough. Network security today requires a multi-layered approach that includes firewalls, patch management, end-point protection, admin controls, end-user education and data backups management."
         }
     ]
 }
