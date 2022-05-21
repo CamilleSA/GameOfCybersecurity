@@ -8,7 +8,6 @@ body {
   background-color: #282c34 !important;
   background-image: url(/public/img/background.png);
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 code {
