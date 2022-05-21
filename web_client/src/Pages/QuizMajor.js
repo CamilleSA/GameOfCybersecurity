@@ -1,11 +1,11 @@
-import React, { useState, useMemo, useRef } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import TinderCard from 'react-tinder-card'
 import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { Button, Table, Spinner } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 
-function QuizMajor () {
+function QuizMinor () {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Adult.length - 1)
   //const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
@@ -56,14 +56,25 @@ function QuizMajor () {
 
   //const canGoBack = currentIndex < questionChild.Questions_Adult.length - 1
 
+  const stopGame = async () => {
+
+    const quizDiv = document.getElementById('quiz');
+    const detailsDiv = document.getElementById('details');
+    const spinn = document.getElementById("spin");
+    const reversed = result.reverse();
+    setSaveAnswer(reversed);
+    quizDiv.style.display = 'none';
+    spinn.style.display = 'block';
+    await wait(2000);
+    spinn.style.display = 'none';
+    detailsDiv.style.display = 'block';
+  }
 
   // set last direction and decrease current index
   const swiped = async (direction, nameToDelete, index) => {
     const checkWin = document.getElementById('winIcon');
     const checkLoose = document.getElementById('looseIcon');
-    const quizDiv = document.getElementById('quiz');
-    const detailsDiv = document.getElementById('details');
-    const spinn = document.getElementById("spin");
+ 
 
     //setLastDirection(direction)
     updateCurrentIndex(index - 1)
@@ -79,15 +90,9 @@ function QuizMajor () {
       checkLoose.style.display = 'block';
       result.push("❌");
     }
-    
+
     if (index === 0) {
-      const reversed = result.reverse();
-      setSaveAnswer(reversed);
-      quizDiv.style.display = 'none';
-      spinn.style.display = 'block';
-      await wait(3000);
-      spinn.style.display = 'none';
-      detailsDiv.style.display = 'block';
+      stopGame();
     }
 
   };
@@ -118,8 +123,8 @@ function QuizMajor () {
     return new Promise(resolve => {
         setTimeout(resolve, timeout);
     })
-}
-
+  };
+  
   return (
 
     <div>
@@ -219,7 +224,7 @@ function QuizMajor () {
         <h5 style={{color:"white", fontWeight: 'bold'}}>Loading results ...</h5>
       </div>
       <div id="details" style={{marginTop: '2%', display: 'none'}}>
-      <Button style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
+      <Button href='/score' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
         <div style={{backgroundColor: '#292a3e', padding: '5px 45px 15px 45px'}}>
                 <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
                 <thead style={{border: '2px solid #01d976'}}>
@@ -251,7 +256,7 @@ function QuizMajor () {
   )
 }
 
-export default QuizMajor
+export default QuizMinor
 /*
       {lastDirection ? (
         <h2 key={lastDirection} className='infoText'>

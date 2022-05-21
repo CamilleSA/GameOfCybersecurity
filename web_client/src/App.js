@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import ChooseQuiz from './Pages/ChooseQuiz';
 import QuizMajor from './Pages/QuizMajor';
 import QuizMinor from './Pages/QuizMinor';
+import Score from './Pages/Score';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/choose-quiz" element={<ChooseQuiz/>}></Route>
           <Route path="/quiz-major" element={<QuizMajor/>}></Route>
           <Route path="/quiz-minor" element={<QuizMinor/>}></Route>
+          <Route path="/score" element={<Score/>}></Route>
         </Routes>
     </div>
     </Router>

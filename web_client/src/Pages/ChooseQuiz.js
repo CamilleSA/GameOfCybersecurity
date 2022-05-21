@@ -6,18 +6,6 @@ function ChooseQuiz() {
 
   const username = sessionStorage.getItem('username');
 
-  const backUsername = () => {
-    window.location.href = '/home';
-  };
-
-  const quizMajor = () => {
-    window.location.href = '/quiz-major';
-  };
-
-  const quizMinor = () => {
-    window.location.href = '/quiz-minor';
-  };
-
   const renderTooltipBeginner = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Your use of the Internet is limited to reading emails, social networks and some research.
@@ -39,15 +27,15 @@ function ChooseQuiz() {
       </div>
       <Col xs={12} md={8}>
         <div id="chooseQuiz" className='col-size offset-md-3' style={{marginTop: '10%'}}>
-        <Button className='button-user' style={{marginLeft: '-80%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={backUsername}><FaArrowLeft/></Button>
+        <Button href='/home' className='button-user' style={{marginLeft: '-80%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}}><FaArrowLeft/></Button>
         <h2 className='text-center'>Welcome {username} !</h2>
           <h2 className='text-center'>Choose the type of quiz:</h2><br/>
           <div className='d-flex col-md-10 offset-md-2'>
           <OverlayTrigger placement="left" delay={{ show: 250, hide: 400 }} overlay={renderTooltipBeginner}>
-          <Button onClick={quizMinor} className='col-md-5 rounded-pill button-user' style={{fontWeight: 'bold', fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Beginner</Button>
+          <Button href='/quiz-minor' className='col-md-5 rounded-pill button-user' style={{fontWeight: 'bold', fontSize:'17px', marginRight:'2%', backgroundColor: '#01d976', borderColor: '#01d976'}}>Quiz for Beginner</Button>
           </OverlayTrigger>
           <OverlayTrigger placement="right" delay={{ show: 250, hide: 400 }} overlay={renderTooltipAdvanced}>
-            <Button onClick={quizMajor} className='col-md-5 rounded-pill button-major'style={{marginRight:'1%', fontWeight: 'bold', fontSize:'17px'}} variant="danger">Quiz for Advanced</Button>
+            <Button href='/quiz-major' className='col-md-5 rounded-pill button-major'style={{marginRight:'1%', fontWeight: 'bold', fontSize:'17px'}} variant="danger">Quiz for Advanced</Button>
             </OverlayTrigger>
           </div>
 

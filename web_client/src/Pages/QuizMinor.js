@@ -85,7 +85,7 @@ function QuizMinor () {
       setSaveAnswer(reversed);
       quizDiv.style.display = 'none';
       spinn.style.display = 'block';
-      await wait(3000);
+      await wait(2000);
       spinn.style.display = 'none';
       detailsDiv.style.display = 'block';
     }
@@ -218,7 +218,7 @@ function QuizMinor () {
         <h5 style={{color:"white", fontWeight: 'bold'}}>Loading results ...</h5>
       </div>
       <div id="details" style={{marginTop: '2%', display: 'none'}}>
-      <Button style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
+      <Button href='/score' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
         <div style={{backgroundColor: '#292a3e', padding: '5px 45px 15px 45px'}}>
                 <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
                 <thead style={{border: '2px solid #01d976'}}>
