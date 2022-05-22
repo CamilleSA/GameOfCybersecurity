@@ -40,4 +40,10 @@ def add_score():
         f.truncate()
         json.dump(results, f)
 
-    return jsonify(results[username]), 200
+    return jsonify({"username": username, "results": results[username]}), 200
+
+@app.route("/getLeaderboard", methods=['GET'])
+def getLeaderboard():
+    difficulty = request.args.get('difficulty', 1)
+
+    return jsonify([]), 200
