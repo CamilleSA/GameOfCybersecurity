@@ -1,6 +1,6 @@
 import { Button, Container, Col, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import '../App.css';
-import { FaArrowLeft, FaRegQuestionCircle } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 function ChooseQuiz() {
 

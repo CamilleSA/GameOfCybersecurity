@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: ./server
+    image: server
+    ports:
+      - "5000:5000"
+  web_client:
+    build:
+      context: ./web_client
+    volumes:
+      - .:/core
+    ports:
+      - "3000:3000"
+    image: web_client
+    depends_on:
+      - server

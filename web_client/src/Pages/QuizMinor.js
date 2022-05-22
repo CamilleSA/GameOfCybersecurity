@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import TinderCard from 'react-tinder-card'
 import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
@@ -6,7 +6,7 @@ import { Button, Table, Spinner } from 'react-bootstrap';
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 
 function QuizMinor () {
-  const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Child.length - 1)
+  const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Child.length - 1);
   //const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
   const username = sessionStorage.getItem('username');
@@ -54,8 +54,35 @@ function QuizMinor () {
     currentIndexRef.current = val
   };
 
-  //const canGoBack = currentIndex < questionChild.Questions_Child.length - 1
+  const sendScore = () => {
+    const userScore = sessionStorage.getItem('score');
+    const myHeaders = new Headers();
+    myHeaders.append("Access-Control-Allow-Origin", "*");
+    myHeaders.append("Content-Type", "application/json; charset=UTF-8");
 
+    const raw = JSON.stringify({"username": username, "difficulty": 1, "score": parseInt(userScore)});
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+    };
+
+    console.log(raw);
+    fetch(`http://localhost:5000/addScore`, requestOptions)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+    }).catch (function(error) {
+        console.log(error);
+    })
+  };
+  //const canGoBack = currentIndex < questionChild.Questions_Child.length - 1
+  
+
+  useEffect(() => {
+    sessionStorage.setItem('score', score);
+  }, [score, winTime]);
+  
 
   // set last direction and decrease current index
   const swiped = async (direction, nameToDelete, index) => {
@@ -67,12 +94,11 @@ function QuizMinor () {
 
     //setLastDirection(direction)
     updateCurrentIndex(index - 1)
-
     if (direction === questionChild.Questions_Child[index].good_answer) {
-      setScore(score + 50);
       checkWin.style.display = 'block';
       checkLoose.style.display = 'none';
-      setWinTime(winTime + 5);
+      setScore(score => score + 50);
+      setWinTime(winTime => winTime + 5);
       result.push("✅");
     } else {
       checkWin.style.display = 'none';
@@ -83,6 +109,7 @@ function QuizMinor () {
     if (index === 0) {
       const reversed = result.reverse();
       setSaveAnswer(reversed);
+      sendScore();
       quizDiv.style.display = 'none';
       spinn.style.display = 'block';
       await wait(2000);
@@ -152,7 +179,6 @@ function QuizMinor () {
           >
             {({ remainingTime }) => {
               if (!start) {
-                console.log(remainingTime);
               }
               return <h1>{remainingTime}</h1>;
             }}
@@ -218,7 +244,7 @@ function QuizMinor () {
         <h5 style={{color:"white", fontWeight: 'bold'}}>Loading results ...</h5>
       </div>
       <div id="details" style={{marginTop: '2%', display: 'none'}}>
-      <Button href='/score' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>See the score table</Button><br/><br/>
+      <Button href='/score' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>View Leaderboard</Button><br/><br/>
         <div style={{backgroundColor: '#292a3e', padding: '5px 45px 15px 45px'}}>
                 <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
                 <thead style={{border: '2px solid #01d976'}}>
