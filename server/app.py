@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from unittest import result
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from enum import Enum
 from datetime import datetime
 from pathlib import Path
@@ -8,6 +9,7 @@ import json
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 RESULTS_FILE = Path(os.environ.get('RESULTS_FILE', 'results.json'))
 
@@ -28,7 +30,7 @@ def add_score():
     if score is None:
         return "Missing score", 400
 
-    with open(RESULTS_FILE, 'r+') as f:
+    with RESULTS_FILE.open('r+') as f:
         results = json.load(f)
         if username not in results:
             results[username] = [{"difficulty": difficulty, "score": score, "date": str(datetime.now())}]
