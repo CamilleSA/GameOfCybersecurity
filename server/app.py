@@ -1,26 +1,41 @@
 from dataclasses import dataclass
-from flask import Flask
-from secrets import token_hex
+from unittest import result
+from flask import Flask, request, jsonify
 from enum import Enum
+from datetime import datetime
+from pathlib import Path
+import json
+import os
 
 app = Flask(__name__)
 
+RESULTS_FILE = Path(os.environ.get('RESULTS_FILE', 'results.json'))
 
-class SessionStatus(str, Enum):
-    STARTED = 'started'
-    ENDED = 'ended'
+if not RESULTS_FILE.is_file():
+    with RESULTS_FILE.open('w') as file:
+        json.dump({}, file)
 
-@dataclass
-class Session:
-    token: str
-    status: SessionStatus
+@app.route("/addScore", methods=['POST'])
+def add_score():
+    username = request.json.get('username', None)
+    difficulty = request.json.get('difficulty', None)
+    score = request.json.get('score', None)
 
-sessions : list[Session] = []
+    if username is None:
+        return "Missing username", 400
+    if difficulty is None:
+        return "Missing difficulty", 400
+    if score is None:
+        return "Missing score", 400
 
-@app.route("/startSession", methods=['POST'])
-def start_session():
-    session_token = token_hex(16)
+    with open(RESULTS_FILE, 'r+') as f:
+        results = json.load(f)
+        if username not in results:
+            results[username] = [{"difficulty": difficulty, "score": score, "date": str(datetime.now())}]
+        else:
+            results[username].append({"difficulty": difficulty, "score": score, "date": str(datetime.now())})
+        f.seek(0)
+        f.truncate()
+        json.dump(results, f)
 
-    sessions.append(Session(token=session_token, status=SessionStatus.STARTED))
-
-    return session_token, 200
+    return jsonify(results[username]), 200
