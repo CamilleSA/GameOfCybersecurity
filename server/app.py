@@ -30,20 +30,32 @@ def add_score():
     if score is None:
         return "Missing score", 400
 
-    with RESULTS_FILE.open('r+') as f:
-        results = json.load(f)
+    with RESULTS_FILE.open('r+') as file:
+        results = json.load(file)
         if username not in results:
             results[username] = [{"difficulty": difficulty, "score": score, "date": str(datetime.now())}]
         else:
             results[username].append({"difficulty": difficulty, "score": score, "date": str(datetime.now())})
-        f.seek(0)
-        f.truncate()
-        json.dump(results, f)
+        file.seek(0)
+        file.truncate()
+        json.dump(results, file)
 
     return jsonify({"username": username, "results": results[username]}), 200
+
+def get_top_score(games, difficulty):
+    top_score = 0
+
+    for game in games:
+        if game['difficulty'] == difficulty and game['score'] > top_score:
+            top_score = game['score']
+    return top_score
+
 
 @app.route("/getLeaderboard", methods=['GET'])
 def getLeaderboard():
     difficulty = request.args.get('difficulty', 1)
 
-    return jsonify([]), 200
+    with RESULTS_FILE.open('r') as file:
+        results = json.load(file)
+        top_scores = [{"username": username, "score": get_top_score(games, difficulty)} for username, games in results.items()]
+    return jsonify(top_scores), 200
