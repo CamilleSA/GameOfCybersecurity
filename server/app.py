@@ -43,11 +43,11 @@ def add_score():
     return jsonify({"username": username, "results": results[username]}), 200
 
 def get_top_score(games, difficulty):
-    top_score = 0
+    top_score = {"score": 0, "date": str(datetime.now())}
 
     for game in games:
-        if game['difficulty'] == difficulty and game['score'] > top_score:
-            top_score = game['score']
+        if game['difficulty'] == difficulty and game['score'] > top_score['score']:
+            top_score = {'score': game['score'], 'date': game['date']}
     return top_score
 
 
@@ -62,5 +62,5 @@ def getLeaderboard():
 
     with RESULTS_FILE.open('r') as file:
         results = json.load(file)
-        top_scores = [{"username": username, "score": get_top_score(games, difficulty)} for username, games in results.items()]
+        top_scores = [{"username": username, **get_top_score(games, difficulty)} for username, games in results.items()]
     return jsonify(top_scores), 200
