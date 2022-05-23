@@ -53,7 +53,12 @@ def get_top_score(games, difficulty):
 
 @app.route("/getLeaderboard", methods=['GET'])
 def getLeaderboard():
-    difficulty = request.args.get('difficulty', 1)
+    difficulty = request.args.get('difficulty', "1")
+
+    if difficulty.isnumeric():
+        difficulty = int(difficulty)
+    else:
+        return "Difficulty should be numeric", 400
 
     with RESULTS_FILE.open('r') as file:
         results = json.load(file)
