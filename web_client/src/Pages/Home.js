@@ -33,7 +33,7 @@ function Home() {
             <div className="offset-md-3 col-size">
             <h2 style={{fontWeight: 'bold'}}>Enter your username :</h2><br/>
             <div className='col-md-6 d-flex'>
-                <Form.Control style={{backgroundColor: '#292a3e', borderColor: '#191a28', color: 'white'}} type="email" id="usernameInput" className='col-md-1 offset-md-6 input-user' placeholder='Enter Username'/>
+                <Form.Control style={{backgroundColor: '#292a3e', borderColor: '#191a28', color: 'white', boxShadow: '0px 0px 20px 0px rgba(1,217,118, 0.8)'}} type="email" id="usernameInput" className='col-md-1 offset-md-6 input-user' placeholder='Enter Username'/>
                 <Button className="button-user" type="button" style={{marginLeft: '3%',borderRadius: '50%', backgroundColor: '#01d976', borderColor: '#01d976'}} onClick={sendUsername}><FaArrowRight/></Button>
             </div><br/>
             <span style={{color: 'white', fontWeight: 'bold'}}>---------- or ----------</span><br/><br/>

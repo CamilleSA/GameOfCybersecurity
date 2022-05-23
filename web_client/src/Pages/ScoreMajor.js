@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Table } from 'react-bootstrap'; 
 
-const Score = () => {
+const ScoreMajor = () => {
     const [score, setScore] = useState([]);
     const username = sessionStorage.getItem('username');
 
@@ -29,9 +29,10 @@ const Score = () => {
                 <img src={require("../Assets/logo.png")} style={{width:'20%'}} alt="Logo"/>
             </div>
             <div style={{marginTop: '5%'}}>
-            <Button href='/choose-quiz' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>Play Again</Button><br/><br/>
+            <h1>Advanced Leaderboard</h1><br/>
+
             <div style={{padding: '5px 45px 15px 45px'}}>
-                <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
+                <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white', boxShadow: '0px 0px 20px 0px rgba(1,217,118, 0.8)'}}>
                 <thead style={{border: '2px solid #01d976'}}>
                   <tr style={{border: '2px solid #01d976'}}>
                   <th style={{border: '2px solid #01d976'}} width='10%'>Place</th>
@@ -43,22 +44,28 @@ const Score = () => {
                   </tr>
                 </thead>
                 <tbody style={{border: '2px solid #01d976'}}>
-                { score.map((scores, index) => (
+                { score
+                .sort((a, b) => {
+                    return b.score - a.score;
+                })
+                .map((scores, index) => (
                   <tr  key={index} style={{border: '2px solid #01d976', color: 'white'}}>
                     <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>{index ? index : "Winner"}</td>
                     <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>{scores.username}</td>
-                    <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>Advanced Quiz</td>
+                    <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>{scores.score ? "Advanced Quiz" : "Beginner Quiz"}</td>
                     <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>{scores.score}</td>
-                    <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>Date</td>
+                    <td style={{border: '2px solid #01d976', color: (username === scores.username ? '#01d976' : 'white'), backgroundColor: (index ? "" : "red"), fontWeight: (username === scores.username ? "bold" : "")}}>{scores.date}</td>
                   </tr>
                   ))}
                 </tbody>
               </Table>
             </div>
+            <Button href='/choose-quiz' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>Play Again</Button><br/><br/>
+
             </div>
 
         </div>
     );
 };
 
-export default Score;
+export default ScoreMajor;

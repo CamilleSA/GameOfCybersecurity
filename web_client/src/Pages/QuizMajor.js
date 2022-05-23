@@ -5,7 +5,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { Button, Table, Spinner } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
 
-function QuizMinor () {
+function QuizMajor() {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Adult.length - 1);
   //const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
@@ -15,7 +15,7 @@ function QuizMinor () {
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
-  const result = [];
+  const result = new Array(questionChild.Questions_Adult.length);
 
 
   const childRefs = useMemo(
@@ -107,8 +107,14 @@ function QuizMinor () {
       checkLoose.style.display = 'block';
       result.push("❌");
     }
-
     if (index === 0 || timer < 3) {
+
+      for (let i = 0; i < result.length; i++) {
+        if (!result[i]) {
+          result[i] = '🕒';
+        }
+      }
+      console.log(result);
       const reversed = result.reverse();
       setSaveAnswer(reversed);
       sendScore();
@@ -247,9 +253,9 @@ function QuizMinor () {
         <h5 style={{color:"white", fontWeight: 'bold'}}>Loading results ...</h5>
       </div>
       <div id="details" style={{marginTop: '2%', display: 'none'}}>
-      <Button href='/score' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>View Leaderboard</Button><br/><br/>
+      <Button href='/score-major' style={{backgroundColor: '#01d976', borderColor: '#01d976', fontWeight: 'bold'}} className='rounded-pill col-md-2 button-user'>View Leaderboard</Button><br/><br/>
         <div style={{backgroundColor: '#292a3e', padding: '5px 45px 15px 45px'}}>
-                <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white'}}>
+                <Table striped bordered hover style={{border: '2px solid #01d976', color: 'white', boxShadow: '0px 0px 20px 0px rgba(1,217,118, 0.8)'}}>
                 <thead style={{border: '2px solid #01d976'}}>
                   <tr style={{border: '2px solid #01d976'}}>
                     <th style={{border: '2px solid #01d976'}} width='20%'>Question</th>
@@ -259,10 +265,7 @@ function QuizMinor () {
                   </tr>
                 </thead>
                 <tbody style={{border: '2px solid #01d976'}}>
-                { questionChild.Questions_Adult
-                .slice()
-                .sort((a,b) => b.title - a.title)
-                .map((question, index) => (
+                { questionChild.Questions_Adult.map((question, index) => (
                   <tr  key={question.title} style={{border: '2px solid #01d976', color: 'white'}}>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question.title}</td>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question[question.good_answer]}</td>
@@ -279,7 +282,7 @@ function QuizMinor () {
   )
 }
 
-export default QuizMinor
+export default QuizMajor
 /*
       {lastDirection ? (
         <h2 key={lastDirection} className='infoText'>
