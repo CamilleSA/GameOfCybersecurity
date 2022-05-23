@@ -15,7 +15,7 @@ function QuizMajor() {
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
-  const result = new Array(questionChild.Questions_Adult.length);
+  const result = [];
 
 
   const childRefs = useMemo(
@@ -108,18 +108,15 @@ function QuizMajor() {
       result.push("❌");
     }
     if (index === 0 || timer < 3) {
-
-      for (let i = 0; i < result.length; i++) {
-        if (!result[i]) {
-          result[i] = '🕒';
-        }
+      while (result.length < questionChild.Questions_Adult.length) {
+        result.push('🕒');
       }
-      console.log(result);
       const reversed = result.reverse();
       setSaveAnswer(reversed);
-      sendScore();
       quizDiv.style.display = 'none';
       spinn.style.display = 'block';
+      await wait(1000);
+      sendScore();
       await wait(2000);
       spinn.style.display = 'none';
       detailsDiv.style.display = 'block';

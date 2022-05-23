@@ -11,11 +11,11 @@ function QuizMinor () {
   const currentIndexRef = useRef(currentIndex)
   const username = sessionStorage.getItem('username');
   const [start, setStart] = useState(false);
-  const [winTime, setWinTime] = useState(30);
+  const [winTime, setWinTime] = useState(5);
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
-  const result = new Array(questionChild.Questions_Child.length);
+  const result = [];
 
 
   const childRefs = useMemo(
@@ -107,19 +107,18 @@ function QuizMinor () {
       checkLoose.style.display = 'block';
       result.push("❌");
     }
-    if (index === 0 || timer < 3) {
 
-      for (let i = 0; i < result.length; i++) {
-        if (!result[i]) {
-          result[i] = '🕒';
-        }
+    if (index === 0  || timer < 3) {
+
+      while (result.length < questionChild.Questions_Child.length) {
+        result.push('🕒');
       }
-      console.log(result);
       const reversed = result.reverse();
       setSaveAnswer(reversed);
-      sendScore();
       quizDiv.style.display = 'none';
       spinn.style.display = 'block';
+      await wait(1000);
+      sendScore();
       await wait(2000);
       spinn.style.display = 'none';
       detailsDiv.style.display = 'block';
@@ -265,7 +264,8 @@ function QuizMinor () {
                   </tr>
                 </thead>
                 <tbody style={{border: '2px solid #01d976'}}>
-                { questionChild.Questions_Child.map((question, index) => (
+                { questionChild.Questions_Child
+                .map((question, index) => (
                   <tr  key={question.title} style={{border: '2px solid #01d976', color: 'white'}}>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question.title}</td>
                     <td style={{border: '2px solid #01d976', color: 'white'}}>{question[question.good_answer]}</td>
