@@ -11,7 +11,7 @@ function QuizMinor () {
   const currentIndexRef = useRef(currentIndex)
   const username = sessionStorage.getItem('username');
   const [start, setStart] = useState(false);
-  const [winTime, setWinTime] = useState(5);
+  const [winTime, setWinTime] = useState(30);
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
