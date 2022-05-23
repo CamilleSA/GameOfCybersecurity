@@ -56,6 +56,10 @@ function QuizMinor () {
 
   const sendScore = () => {
     const userScore = sessionStorage.getItem('score');
+    const today = new Date();
+    const date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+    const timed = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const dateTime = date+' '+timed;
     const myHeaders = new Headers();
     myHeaders.append("Access-Control-Allow-Origin", "*");
     myHeaders.append("Content-Type", "application/json; charset=UTF-8");
@@ -81,6 +85,7 @@ function QuizMinor () {
 
   useEffect(() => {
     sessionStorage.setItem('score', score);
+   // console.log('time: ', timer)
   }, [score, winTime]);
   
 
@@ -91,6 +96,7 @@ function QuizMinor () {
     const quizDiv = document.getElementById('quiz');
     const detailsDiv = document.getElementById('details');
     const spinn = document.getElementById("spin");
+    const timer = sessionStorage.getItem('time');
 
     //setLastDirection(direction)
     updateCurrentIndex(index - 1)
@@ -106,7 +112,7 @@ function QuizMinor () {
       result.push("❌");
     }
 
-    if (index === 0) {
+    if (index === 0 || timer < 3) {
       const reversed = result.reverse();
       setSaveAnswer(reversed);
       sendScore();
@@ -180,6 +186,7 @@ function QuizMinor () {
             {({ remainingTime }) => {
               if (!start) {
               }
+              sessionStorage.setItem('time', remainingTime);
               return <h1>{remainingTime}</h1>;
             }}
           </CountdownCircleTimer>
