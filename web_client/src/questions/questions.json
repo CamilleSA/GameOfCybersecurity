@@ -49,7 +49,68 @@
             "down": "Cryptocurrency assures you of wealth",
             "good_answer": "up",
             "details": ""
+        },
+        {
+            "title": "An application asks for contacts, microphone, SMS ... access",
+            "image": "./img/mobile1.jpg",
+            "left": "Never bother with this, hit OK",
+            "right": "Grant time-to-time permissions for applications",
+            "up": "Uninstall this application",
+            "down": "No answer",
+            "good_answer": "right",
+            "details": "In general, applications ask for user permissions in order to provide them with services. However, there are applications that will ask permission to all sorts of data that might not seem necessary for the application to work. Sometimes, the reason is to collect sensitive information through these permissions and subsequently sell them to spammers or scammers. The user should always be cautious, especially if he/she downloads applications from untrusted or dubious sources."
+        },
+        {
+            "title": "An malware that's blocks your computer unless you pay is called",
+            "image": "./img/malware1.jpeg",
+            "left": "A ransomware",
+            "right": "A trojan",
+            "up": "A bot",
+            "down": "A Spyware",
+            "good_answer": "left",
+            "details": "Ransomware attacks encrypt a device's data and holding it for ransom until the hacker is paid to release it. If the ransom isn't paid by a deadline, the hacker will threaten to delete the data—or possible expose it. Paying up may not help; often, victims lose their data even if they pay the fee."
+        },
+        {
+            "title": "What exactly is a Botnet?",
+            "image": "./img/malware1.jpeg",
+            "left": "Phishing",
+            "right": "POS attack",
+            "up": "DoS attack",
+            "down": "No answer",
+            "good_answer": "up",
+            "details": "If the requests come from multiple sources, it is a DDoS (Distributed-Denial-of-Service) attack."
+        },
+        {
+            "title": "What is the type of attack designed to hinder the normal operation of a website",
+            "image": "./img/network1.jpeg",
+            "left": "Phishing",
+            "right": "POS attack",
+            "up": "DoS attack",
+            "down": "No answer",
+            "good_answer": "up",
+            "details": "If the requests come from multiple sources, it is a DDoS (Distributed-Denial-of-Service) attack."
+        },
+        {
+            "title": "To protect your communications over public networks you should",
+            "image": "./img/network1.jpeg",
+            "left": "Use a Virtual Private Network (VPN)",
+            "right": "Find the strongest WiFi signal near you",
+            "up": "Turn off your file sharing",
+            "down": "Prefer sending email than using a well-known service",
+            "good_answer": "left",
+            "details": "A VPN allows a company to leverage Internet resources, enabling employees to easily collaborate from various locations, including home."
+        },
+        {
+            "title": "Which of the following statements is true about GDPR?",
+            "image": "./img/gdpr1.jpeg",
+            "left": "It only applies to companies located in Europe.",
+            "right": "GDPR is closely related to IT security.",
+            "up": "Failing to comply with GDPR only damages a company's reputation",
+            "down": "No answer",
+            "good_answer": "right",
+            "details": "A VPN allows a company to leverage Internet resources, enabling employees to easily collaborate from various locations, including home."
         }
+        
     ],
     "Questions_Child": [
         {
@@ -161,6 +222,16 @@
             "down": "No answer",
             "good_answer": "right",
             "details": "Anti-virus software alone is no longer enough. Network security today requires a multi-layered approach that includes firewalls, patch management, end-point protection, admin controls, end-user education and data backups management."
+        },
+        {
+            "title": "On your mobile, what source should you use to install the an application?",
+            "image": "./img/mobile1.jpg",
+            "left": "First result of your research is the best",
+            "right": "Ask a fried to install it",
+            "up": "All sources are the same",
+            "down": "Use the official application store",
+            "good_answer": "down",
+            "details": "When it comes to mobile applications, it is crucial to be on alert. Always use the trusted application store offered by the device's manufacturer, and never download apps from untrusted, third-party sources. Sometimes applications downloaded directly from the official stores might contain malicious code, thus additional protection - like antivirus solutions - are also recommended."
         }
     ]
 }
