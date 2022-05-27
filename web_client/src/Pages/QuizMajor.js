@@ -4,6 +4,7 @@ import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { Button, Table, Spinner } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
+const result = [];
 
 function QuizMajor() {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Adult.length - 1);
@@ -15,8 +16,6 @@ function QuizMajor() {
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
-  const result = [];
-
 
   const childRefs = useMemo(
     () =>

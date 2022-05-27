@@ -4,6 +4,7 @@ import questionChild from "../questions/questions.json"
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { Button, Table, Spinner } from 'react-bootstrap'; 
 import { FaRegTimesCircle, FaRegCheckCircle } from "react-icons/fa";
+const result = [];
 
 function QuizMinor () {
   const [currentIndex, setCurrentIndex] = useState(questionChild.Questions_Child.length - 1);
@@ -15,7 +16,6 @@ function QuizMinor () {
   const [score, setScore] = useState(0);  
   const [saveAnswer, setSaveAnswer] = useState([]);
   const canSwipe = currentIndex >= 0;
-  const result = [];
 
 
   const childRefs = useMemo(
@@ -107,7 +107,6 @@ function QuizMinor () {
       checkLoose.style.display = 'block';
       result.push("❌");
     }
-
     if (index === 0  || timer < 3) {
 
       while (result.length < questionChild.Questions_Child.length) {
@@ -123,7 +122,6 @@ function QuizMinor () {
       spinn.style.display = 'none';
       detailsDiv.style.display = 'block';
     }
-
   };
 
   const outOfFrame = (name, idx) => {
@@ -137,7 +135,7 @@ function QuizMinor () {
     if (nextCardPackage) {
       nextCardPackage.style.display = 'flex';
     }
-   // console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
+    console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
 
   }
@@ -146,6 +144,7 @@ function QuizMinor () {
     if (canSwipe && currentIndex < questionChild.Questions_Child.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
+    
   };
 
   const wait = (timeout) => {
