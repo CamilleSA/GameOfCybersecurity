@@ -109,6 +109,94 @@
             "down": "No answer",
             "good_answer": "right",
             "details": "A VPN allows a company to leverage Internet resources, enabling employees to easily collaborate from various locations, including home."
+        },
+        {
+            "title": "What is the most suitable password?",
+            "image": ".img/password2.jpeg",
+            "left": "123456",
+            "right": "qwerty123",
+            "up": "1q2w3e",
+            "down": "MfMa6d@tbc&ich£10",
+            "good_answer": "down",
+            "details": "When it comes to passwords, think 'length over complexity'. The longer the password, the stronger it is. More characters = more security."
+        },
+        {
+            "title": "Which one of the following is MOST likely to be a hoax?",
+            "image": ".img/email.jpeg",
+            "left": "An email from a friend you have not seen recently.",
+            "right": "An email with an attachment sent by a colleague using their personal email address.",
+            "up": "An email asking you to go to a website for a free computer scan.",
+            "down": "An email advertisement from a local shop you subscribe to.",
+            "good_answer": "up",
+            "details": ""
+        },
+        {
+            "title": "Which one of the following should be used to change your password?",
+            "image": ".img/window.jpeg",
+            "left": "Internet Explorer.",
+            "right": "Control Panel.",
+            "up": "Anti-virus software.",
+            "down": "Windows Firewall.",
+            "good_answer": "left",
+            "details": ""
+        },
+        {
+            "title": "If You receive this email, what's your next step?",
+            "image": ".img/email.jpeg",
+            "left": "Ignore the email and delete it.",
+            "right": "Follow the link and reset your password.",
+            "up": "Reset your password manually.",
+            "down": "Ask a colleague.",
+            "good_answer": "left",
+            "details": "This is a phishing email. If you are using Microsoft, a password reminder will alert your desktop, not your email address. Always use caution when dealing with emails."
+        },
+        {
+            "title": "You're just leaving your office for the day, when you stumble upon a USB stick on the floor. What do you do?",
+            "image": ".img/usb.jpeg",
+            "left": "Take it home and use it.",
+            "right": "Hand it into reception for them to deal with.",
+            "good_answer": "left",
+            "details": "An unidentified hard drive could cause problems. It is best to hand it in to reception so they can discover if anyone has lost it initially."
+        },
+        {
+            "title": "Your computer has just been infected with Ransomware and the hacker is demanding £1,000 before releasing it. What do you do?",
+            "image": ".img/ransomware.jpeg",
+            "left": "Send an email to the IT guy in the office.",
+            "right": "Try your best to get rid of it before anyone finds out",
+            "up": "Pay the ransom. You need your files back!",
+            "down": "Disconnect your computer from the network.",
+            "good_answer": "down",
+            "details": ""
+        },
+        {
+            "title": "Your computer is now clear of Ransomware and you're ready to start working again. What will you do first?",
+            "image": ".img/ransomware.jpeg",
+            "left": "Backup the data as soon as you can.",
+            "right": "Continue working as normal.",
+            "up": "Reinstall the USB stick, as you still don't know who it belongs to.",
+            "down": "Nothing, it's been dealt with.",
+            "good_answer": "left",
+            "details": ""
+        },
+        {
+            "title": "On your way home, you've noticed you've left your mobile on the train? What do you do?",
+            "image": ".img/telephone.jpeg",
+            "left": "Call the train line to find out if anyone has handed it in.",
+            "right": "Call your phone to make arrangements to meet the person who found it.",
+            "up": "Remotely disable it as soon as possible.",
+            "down": "Call the phone network to advise them.",
+            "good_answer": "right",
+            "details": "Disabling your mobile remotely is a useful application to have. You are able to protect the data, track your phone and delete the data if required."
+        },
+        {
+            "title": "You decide to relax and purchase some concert tickets online. The website doesn't seem to be working as you cannot get through. This is commonly the result of a -",
+            "image": ".img/ticket.jpeg",
+            "left": "Malware Attack.",
+            "right": "DDoS Attack.",
+            "up": "Spear-Phising Attack.",
+            "down": "Ransomware Attack.",
+            "good_answer": "down",
+            "details": ""
         }
         
     ],
@@ -232,6 +320,62 @@
             "down": "Use the official application store",
             "good_answer": "down",
             "details": "When it comes to mobile applications, it is crucial to be on alert. Always use the trusted application store offered by the device's manufacturer, and never download apps from untrusted, third-party sources. Sometimes applications downloaded directly from the official stores might contain malicious code, thus additional protection - like antivirus solutions - are also recommended."
+        },
+        {
+            "title": "If an email shows my bank's official header and logo, it is reliable. True or false?",
+            "image": ".img/bank.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "right",
+            "details": "Scammers can perfectly reproduce the graphic look of your bank's emails, and even a carbon copy of its website."
+        },
+        {
+            "title": "In Bluetooth mode, I put my data at risk. True or false?",
+            "image": ".img/bluetooth.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "left",
+            "details": "The Bluetooth network is often responsible for security breaches that put your data at risk. It's best to turn it off when you're not using it."
+        },
+        {
+            "title": "Downloading an e-mail attachment can allow someone to take control of my computer. True or false?",
+            "image": ".img/email.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "left",
+            "details": "By downloading the attachment, you can start installing malware that will give hackers access to your computer."
+        },
+        {
+            "title": "A virus can be installed on my computer via a public or free wireless network. True or false?",
+            "image": ".img/virus.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "left",
+            "details": "This is why it is best to avoid connecting to unsecured networks."
+        },
+        {
+            "title": "When I travel, I am more likely to be a victim of hacking. True or false?",
+            "image": ".img/travel.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "left",
+            "details": "When we travel, our habits are shaken up. We connect more easily to unsecured networks, or we leave our computer unattended in our hotel room."
+        },
+        {
+            "title": "In the address bar of my search engine, a URL beginning with 'https://' means that the site is secure. True or false?",
+            "image": ".img/search.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "left",
+            "details": "When a site is secure, the URL begins with the word 'https://'. The absence of an 's' means that the site is not secure."
+        },
+        {
+            "title": "If an email shows my bank's name in the sender field, it's official. True or false?",
+            "image": ".img/bank.jpeg",
+            "left": "True.",
+            "right": "False.",
+            "good_answer": "right",
+            "details": "Only by hovering or clicking on the sender's name will you be able to view the email address and verify if it is official."
         }
     ]
 }
