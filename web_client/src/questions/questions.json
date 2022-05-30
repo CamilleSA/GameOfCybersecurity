@@ -112,7 +112,7 @@
         },
         {
             "title": "What is the most suitable password?",
-            "image": ".img/password2.jpeg",
+            "image": "./img/password2.jpeg",
             "left": "123456",
             "right": "qwerty123",
             "up": "1q2w3e",
@@ -122,7 +122,7 @@
         },
         {
             "title": "Which one of the following is MOST likely to be a hoax?",
-            "image": ".img/email.jpeg",
+            "image": "./img/email.jpeg",
             "left": "An email from a friend you have not seen recently.",
             "right": "An email with an attachment sent by a colleague using their personal email address.",
             "up": "An email asking you to go to a website for a free computer scan.",
@@ -132,7 +132,7 @@
         },
         {
             "title": "Which one of the following should be used to change your password?",
-            "image": ".img/window.jpeg",
+            "image": "./img/window.jpeg",
             "left": "Internet Explorer.",
             "right": "Control Panel.",
             "up": "Anti-virus software.",
@@ -142,7 +142,7 @@
         },
         {
             "title": "If You receive this email, what's your next step?",
-            "image": ".img/email.jpeg",
+            "image": "./img/email.jpeg",
             "left": "Ignore the email and delete it.",
             "right": "Follow the link and reset your password.",
             "up": "Reset your password manually.",
@@ -152,7 +152,7 @@
         },
         {
             "title": "You're just leaving your office for the day, when you stumble upon a USB stick on the floor. What do you do?",
-            "image": ".img/usb.jpeg",
+            "image": "./img/usb.jpeg",
             "left": "Take it home and use it.",
             "right": "Hand it into reception for them to deal with.",
             "good_answer": "left",
@@ -160,7 +160,7 @@
         },
         {
             "title": "Your computer has just been infected with Ransomware and the hacker is demanding £1,000 before releasing it. What do you do?",
-            "image": ".img/ransomware.jpeg",
+            "image": "./img/ransomware.jpeg",
             "left": "Send an email to the IT guy in the office.",
             "right": "Try your best to get rid of it before anyone finds out",
             "up": "Pay the ransom. You need your files back!",
@@ -170,7 +170,7 @@
         },
         {
             "title": "Your computer is now clear of Ransomware and you're ready to start working again. What will you do first?",
-            "image": ".img/ransomware.jpeg",
+            "image": "./img/ransomware.jpeg",
             "left": "Backup the data as soon as you can.",
             "right": "Continue working as normal.",
             "up": "Reinstall the USB stick, as you still don't know who it belongs to.",
@@ -180,7 +180,7 @@
         },
         {
             "title": "On your way home, you've noticed you've left your mobile on the train? What do you do?",
-            "image": ".img/telephone.jpeg",
+            "image": "./img/telephone.jpeg",
             "left": "Call the train line to find out if anyone has handed it in.",
             "right": "Call your phone to make arrangements to meet the person who found it.",
             "up": "Remotely disable it as soon as possible.",
@@ -190,7 +190,7 @@
         },
         {
             "title": "You decide to relax and purchase some concert tickets online. The website doesn't seem to be working as you cannot get through. This is commonly the result of a -",
-            "image": ".img/ticket.jpeg",
+            "image": "./img/ticket.jpeg",
             "left": "Malware Attack.",
             "right": "DDoS Attack.",
             "up": "Spear-Phising Attack.",
@@ -323,7 +323,7 @@
         },
         {
             "title": "If an email shows my bank's official header and logo, it is reliable. True or false?",
-            "image": ".img/bank.jpeg",
+            "image": "./img/bank.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "right",
@@ -331,7 +331,7 @@
         },
         {
             "title": "In Bluetooth mode, I put my data at risk. True or false?",
-            "image": ".img/bluetooth.jpeg",
+            "image": "./img/bluetooth.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "left",
@@ -339,7 +339,7 @@
         },
         {
             "title": "Downloading an e-mail attachment can allow someone to take control of my computer. True or false?",
-            "image": ".img/email.jpeg",
+            "image": "./img/email.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "left",
@@ -347,7 +347,7 @@
         },
         {
             "title": "A virus can be installed on my computer via a public or free wireless network. True or false?",
-            "image": ".img/virus.jpeg",
+            "image": "./img/virus.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "left",
@@ -355,7 +355,7 @@
         },
         {
             "title": "When I travel, I am more likely to be a victim of hacking. True or false?",
-            "image": ".img/travel.jpeg",
+            "image": "./img/travel.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "left",
@@ -363,7 +363,7 @@
         },
         {
             "title": "In the address bar of my search engine, a URL beginning with 'https://' means that the site is secure. True or false?",
-            "image": ".img/search.jpeg",
+            "image": "./img/search.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "left",
@@ -371,7 +371,7 @@
         },
         {
             "title": "If an email shows my bank's name in the sender field, it's official. True or false?",
-            "image": ".img/bank.jpeg",
+            "image": "./img/bank.jpeg",
             "left": "True.",
             "right": "False.",
             "good_answer": "right",
